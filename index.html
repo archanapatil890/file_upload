@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<script type="text/javascript" src="vendors/angular.js"></script>
+<script type="text/javascript">
+var app = angular.module("UserModule",[]);
+app.controller("ExampleController",['$scope',function($scope){
+	$scope.value="xyz";
+	$scope.submit = function(){
+		alert("done");
+	}
+}]);
+function submit(){
+	alert("File has been uploaded successfully");
+}
+</script>
+<script type="text/javascript" src="file_upload/ngfileupload.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+</head>
+<body id="user" ng-app="UserModule">
+<form ng-controller="ExampleController">
+<file-upload width="200" image="new_user.png" title="Upload Image" ></file-upload>
+</form>
+</body>
+</html>
